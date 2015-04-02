@@ -25,8 +25,9 @@ ObverserList.prototype.indexOf = function(observer) {
   for (var i = 0; i < this.observers.length; i++) {
     if (observer === this.observers[i])
       return i;
-    return -1;
   }
+    return -1;
+  
 }
 ObverserList.prototype.get = function(index) {
   if (index >= 0 && index < this.observers.length) {
@@ -120,7 +121,7 @@ window.onload = function() {
     var index = $("#ObserversList").value;
     var node = subject.obverserList.get(index - 1);
     $("#Observers_container").removeChild(node);
-    subject.obverserList.remove(index - 1);
+    subject.obverserList.remove(node);
     $("#ObserversList").options.remove($("#ObserversList").selectedIndex);
     $.slice.call($("option", $("#ObserversList"))).forEach(function(value, key, array){
         value.value = key + 1;
@@ -128,6 +129,9 @@ window.onload = function() {
     });
   },true)
 
-
+  $("#menu_trigger_container").addEventListener("click", function(){
+    $("#menu").classList.toggle("menu_open");
+    $("#content").classList.toggle("menu_open_content");
+  },true)
 
 }
