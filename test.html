@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .observer {
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin: 10px;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        border-radius:10px;
+    }
+    
+    #subject {
+        width: 400px;
+        height: 200px;
+        margin: 10px;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        border-radius:10px;
+    }
+    #control-box{
+    	width:400px;
+    	margin:0 auto;
+    }
+	.btn {
+	  display: inline-block;
+	  padding: 6px 12px;
+	  margin-bottom: 0;
+	  font-size: 14px;
+	  font-weight: 400;
+	  line-height: 1.42857143;
+	  text-align: center;
+	  white-space: nowrap;
+	  vertical-align: middle;
+	  -ms-touch-action: manipulation;
+	  touch-action: manipulation;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  background-image: none;
+	  border: 1px solid transparent;
+	  border-radius: 4px;
+	  -webkit-transition: all .2s ease-in-out;
+  	  -moz-transition: all .2s ease-in-out;
+ 	  transition: all .2s ease-in-out;
+
+	}
+	.btn-fashion{
+		background:#FF6666;
+		color: white;
+	}
+	.btn-fashion:hover{
+		opacity:0.6;
+	}
+    </style>
+</head>
+
+<body>
+    <div>
+    	 <div id="control-box" >
+            <button id="add" class = "btn btn-fashion">添加观察者</button>
+            <label for="">移除第
+                <select name="" id="ObserversList"></select>个观察者</label>
+            <button id="remove" class = "btn btn-fashion">确定</button>
+        </div>
+        <div id="subject"></div>
+    </div>
+    <div id="Observers_container">
+    </div>
+    <script src="dom.js"></script>
+    <script src="q.js"></script>
+</body>
+
+</html>
