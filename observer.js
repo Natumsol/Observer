@@ -126,17 +126,6 @@ window.onload = function() {
         subject.notify(color);
     }, 1000);
 
-    /*$("#remove").addEventListener("click", function(){
-      var index = $("#ObserversList").value;
-      var node = subject.obverserList.get(index - 1);
-      $("#Observers_container").removeChild(node);
-      subject.obverserList.remove(node);
-      $("#ObserversList").options.remove($("#ObserversList").selectedIndex);
-      $.slice.call($("option", $("#ObserversList"))).forEach(function(value, key, array){
-          value.value = key + 1;
-          value.innerHTML = "观察者" + value.value ;
-      });
-    },true)*/
     function reSortIndex() {
         for (var i = 0; i < subject.obverserList.count(); i++) {
             $(".show_observer", subject.obverserList.get(i))[0].innerHTML = "观察者Observer " + (1 + i);
@@ -148,7 +137,6 @@ window.onload = function() {
         if (!event) event = window.event;
         if (event.target.className == "close") {
             var node = event.target.parentNode;
-            // $("#Observers_container").removeChild(node);
             node.classList.add("null");
             $(".show_observer", node)[0].innerHTML = "";
             garbages.push(node);
@@ -175,18 +163,18 @@ window.onload = function() {
         }
         subject.obverserList.empty();
     });
-    $("#decoupling").addEventListener("click",function(){
-      for(var i = 0; i < subject.obverserList.count(); i ++) {
-        obversers.push(subject.obverserList.get(i))
-      }
-      subject.empty();
+    $("#decoupling").addEventListener("click", function() {
+        for (var i = 0; i < subject.obverserList.count(); i++) {
+            obversers.push(subject.obverserList.get(i))
+        }
+        subject.empty();
     })
-     $("#notify").addEventListener("click",function(){
-      for(var i = 0; i < obversers.length; i ++) {
-        subject.addObserver(obversers[i]);
-      }
+    $("#notify").addEventListener("click", function() {
+        for (var i = 0; i < obversers.length; i++) {
+            subject.addObserver(obversers[i]);
+        }
     })
-    $("#about").addEventListener("click",function(){
-      window.location.href = "http://yoghurts.github.io/about/";
+    $("#about").addEventListener("click", function() {
+        window.location.href = "http://yoghurts.github.io/about/";
     })
 }
