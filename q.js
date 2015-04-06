@@ -76,6 +76,7 @@ function Observer() {
     return new Observer();
   } else {
     this.status = "";
+    this.GUID = (new Date()).getTime();
   }
 }
 
@@ -96,7 +97,7 @@ function randomColor() {
   } else {
     return randomColor();
   }
-}
+}// 生成随机色
 
 
 window.onload = function() {
@@ -105,7 +106,8 @@ window.onload = function() {
   $("#add").addEventListener("click", function() {
     var node = document.createElement("div");
     node.className = "observer";
-    extend(node, new Observer())
+    extend(node, new Observer());
+    node.id = node.GUID;
     subject.addObserver(node);
     $("#Observers_container").appendChild(node);
     $("#ObserversList").options.add(new Option("观察者" + subject.obverserList.count(),subject.obverserList.count())); //这个兼容IE与firefox
