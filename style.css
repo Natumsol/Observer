@@ -1,0 +1,298 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/**
+ * Custom css file
+ * @author:Yoghurts;
+ */
+
+html,
+body,
+.container,
+.pusher,
+#content {
+    height: 100%;
+}
+
+body {
+    background-color: #f2b635;
+}
+
+.show {
+    transition: opacity 500ms;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.menu {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    cursor: pointer;
+}
+
+.menu a {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    width: 28px;
+    height: 19px;
+    overflow: hidden;
+    z-index: 200;
+    text-indent: -5555px;
+    transition: all 0.5s ease-out;
+}
+
+.btnCloseNav span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-transition: margin 0.13s ease-out 0.23s, opacity 0.13s ease-out 0.23s, -webkit-transform 0.13s ease-out;
+    -moz-transition: margin 0.13s ease-out 0.23s, opacity 0.13s ease-out 0.23s, -moz-transform 0.13s ease-out;
+    -ms-transition: margin 0.13s ease-out 0.23s, opacity 0.13s ease-out 0.23s, -ms-transform 0.13s ease-out;
+    transition: margin 0.13s ease-out 0.23s, opacity 0.13s ease-out 0.23s, transform 0.13s ease-out;
+}
+
+.btnCloseNav .l1 {
+    margin-top: -8px;
+}
+
+.btnCloseNav .l3 {
+    margin-top: 8px;
+}
+
+.btnCloseNav.open {
+    transform: translateX(212px);
+}
+
+#container {
+    display: block;
+}
+
+.effect.container {}
+
+.main_menu {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 100;
+    /*visibility: hidden;*/
+    
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+    background: #F2B635;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.main_menu.open {
+    /*transform:translateX(300px);*/
+}
+
+.main_menu ul {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main_menu ul li {
+    display: table;
+    position: relative;
+    left: -300px;
+    width: 100%;
+    padding: 0;
+    height: 20.1%;
+    background-color: #6F6F6F;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    transition-delay: 0.10s;
+}
+
+.main_menu.open ul li {
+    transform: translateX(300px)
+}
+
+.main_menu ul li:nth-child(2) {
+    background: #646464;
+    transition-delay: 0.15s;
+}
+
+.main_menu ul li:nth-child(3) {
+    background: #5E5E5E;
+    transition-delay: 0.20s;
+}
+
+.main_menu ul li:nth-child(4) {
+    background: #595959;
+    transition-delay: 0.25s;
+}
+
+.main_menu ul li:nth-child(5) {
+    background: #545454;
+    transition-delay: 0.30s;
+}
+
+.main_menu ul li a {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.main_menu ul li a:hover {
+    background-color: #f2b635;
+    transition: all .3s ease;
+}
+.pusher{
+    transition:all 3s;
+}
