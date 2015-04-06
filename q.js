@@ -81,7 +81,7 @@ function Observer() {
 }
 
 Observer.prototype.update = function(status) {
-  this.style.background = status;
+  $(".show_observer",this)[0].style.background = status;
 }
 
 function extend(obj, src) {
@@ -108,9 +108,16 @@ window.onload = function() {
     node.className = "observer";
     extend(node, new Observer());
     node.id = node.GUID;
+    var node2 = document.createElement("div");
+    node2.className = "show_observer";
+    node2.innerHTML = "观察者Observer " + (1 +subject.obverserList.count());
+    node.appendChild(node2);
+    var node3 = document.createElement("span");
+    node3.className = "close";
+    node.appendChild(node3);
     subject.addObserver(node);
     $("#Observers_container").appendChild(node);
-    $("#ObserversList").options.add(new Option("观察者" + subject.obverserList.count(),subject.obverserList.count())); //这个兼容IE与firefox
+    // $("#ObserversList").options.add(new Option("观察者" + subject.obverserList.count(),subject.obverserList.count())); //这个兼容IE与firefox
   }, true);
 
   setInterval(function() {
@@ -119,7 +126,7 @@ window.onload = function() {
     subject.notify(color);
   }, 1000);
 
-  $("#remove").addEventListener("click", function(){
+  /*$("#remove").addEventListener("click", function(){
     var index = $("#ObserversList").value;
     var node = subject.obverserList.get(index - 1);
     $("#Observers_container").removeChild(node);
@@ -129,11 +136,6 @@ window.onload = function() {
         value.value = key + 1;
         value.innerHTML = "观察者" + value.value ;
     });
-  },true)
-
-  $("#menu_trigger_container").addEventListener("click", function(){
-    $("#menu").classList.toggle("menu_open");
-    $("#content").classList.toggle("menu_open_content");
-  },true)
+  },true)*/
 
 }
