@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Observer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- new -->
+    <div class="menu" style="display:block">
+        <a class="btnCloseNav">
+            <span class="l1"></span>
+            <span class="l2"></span>
+            <span class="l3"></span>
+        </a>
+    </div>
+    <div class="container effect" id="container">
+        <nav class="main_menu hide">
+            <ul>
+                <li><a href="javascript:void(0)" id="add">增加观察者</a></li>
+                <li><a href="javascript:void(0)" id = "empty">清空观察者</a></li>
+                <li><a href="javascript:void(0)" id = "decoupling">解耦</a></li>
+                <li><a href="javascript:void(0)" id = "notify">耦合</a></li>
+                <li><a href="javascript:void(0)" id = "about">关于</a></li>
+            </ul>
+        </nav>
+        <div class="pusher">
+            <div id="subject"><span class = "subject-tips">目标Subject</span></div>
+            <div id="Observers_container">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dom.js"></script>
+    <script src="observer.js"></script>
+    <script>
+    function randomColor() {
+        var rand = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+        if (rand.length == 6) {
+            return rand;
+        } else {
+            return randomColor();
+        }
+    }
+    $(".menu")[0].addEventListener("click", function() {
+        $(".main_menu")[0].classList.toggle("open");
+        $(".main_menu")[0].classList.toggle("hide");
+        $(".btnCloseNav")[0].classList.toggle("open");
+        $(".pusher")[0].classList.toggle("open");
+    });
+    $(".pusher")[0].addEventListener("click", function() {
+        if ($(".btnCloseNav")[0].classList.contains("open")) {
+            $(".main_menu")[0].classList.toggle("open");
+            $(".main_menu")[0].classList.toggle("hide");
+            $(".btnCloseNav")[0].classList.toggle("open");
+            this.classList.toggle("open");
+        }
+
+    });
+    </script>
+</body>
+
+</html>

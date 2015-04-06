@@ -326,20 +326,23 @@ body {
     float: left;
     width: 100%;
     height: 100%;
-    transition: all 1s ease;
+    transition: width 1s ease, background-color 1s ease;
     box-sizing: border-box;
     color: #fff;
-    font-family: consola,simhei;
-    font-size: 1.5em;
+    font-family: consolas;
+    font-size: 1.2em;
     text-align: center;
     line-height: 107px;
 
 }
-
+.null.show_observer{
+    padding: 0;
+    width: 0 !important;
+}
 .observer {
     width: 25%;
     height: 107px;
-    transition: all 1s ease;
+    transition: width 1s ease;
     box-sizing: border-box;
     display: inline-block;
     padding-right: 2px;
@@ -348,7 +351,12 @@ body {
     position: relative;
     z-index: 1000;
 }
-
+.null.observer{
+    width: 0 !important;
+    font-size: 0;
+    padding: 0;
+    color: transparent !important;
+}
 .subject-tips {
     display: table-cell;
     width: 100%;
@@ -356,7 +364,7 @@ body {
     text-align: center;
     vertical-align: middle;
     color: #fff;
-    font-family: simhei,consola;
+    font-family: consolas;
     font-size: 2em;
 }
 
